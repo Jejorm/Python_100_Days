@@ -21,3 +21,10 @@ print(123 + 456)
 
 True
 False
+
+
+num_char = len(input("What is your name? "))
+
+new_num_char = str(num_char)
+
+print("You name has " + new_num_char + " characters")
