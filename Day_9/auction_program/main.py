@@ -12,8 +12,8 @@ while continue_auction:
 
     person[name] = bid
 
-    answer = input("Are there any other bridders? Tpe 'yes' or 'no'.\n").lower()
-    if answer == "no":
+    answer = input("Are there any other bridders?\nType 'q' to exit or anything else to continue the auction\n").lower()
+    if answer == "q".lower():
         continue_auction = False
 
 for name_person in person:
