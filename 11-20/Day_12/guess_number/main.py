@@ -1,6 +1,7 @@
 from art import logo
 from random import randint
 
+
 def random_number():
     number = randint(1, 100)
     return number
@@ -21,10 +22,10 @@ def check_guess(number, guess, attempts):
         else:
             print("You've run out of guesses, you lose.")
 
-    elif number == guess:
-            print(f"\n\nYou got it! the answer was {number}.")
-            win = True
-            return win
+    else:
+        print(f"\n\nYou got it! the answer was {number}.")
+        win = True
+        return win
 
 
 def game(number, total_attempts):
@@ -38,7 +39,6 @@ def game(number, total_attempts):
             break
 
 
-
 continue_game = True
 
 while continue_game:
@@ -46,7 +46,7 @@ while continue_game:
     print(logo)
     print("\n\n\nWelcome to the Number Guessing Game!")
     print("\n\nI'm thinking of a number between 1 and 100.")
-    # print(f"Pssst, the correct answer is: {number}")
+    print(f"Pssst, the correct answer is: {number}")
     option = input("\nChoose a difficulty. Type 'easy' or 'hard': ").lower()
 
     if option == "easy":
@@ -55,6 +55,7 @@ while continue_game:
         game(number, 5)
 
     play_again = input("\n\nDo you want to play again? Type something to play or 'n' to exit: \n\n").lower()
+
     if play_again == 'n':
         print("\n\nGoodbye!")
         continue_game = False
