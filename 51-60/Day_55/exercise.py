@@ -1,5 +1,20 @@
 from flask import Flask
 
+def make_bold(function):
+    def wrapper():
+        return f"<b style='font-size:50px;'>{function()}</b>"
+    return wrapper
+
+def make_emphasis(function):
+    def wrapper():
+        return f"<em>{function()}</em>"
+    return wrapper
+
+def make_underline(function):
+    def wrapper():
+        return f"<u>{function()}</u>"
+    return wrapper
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -10,6 +25,9 @@ def hello_world():
 
 
 @app.route("/bye")
+@make_underline
+@make_emphasis
+@make_bold
 def bye():
     return "Bye!"
 
